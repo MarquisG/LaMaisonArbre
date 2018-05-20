@@ -27,7 +27,6 @@
             </div>
 
             <div class="clearfix"></div>
-
             @foreach($apparts as $appart)
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -78,13 +77,11 @@
                 </div>
               </div>
             @endforeach
-
-
-
+            </div>
+          </div>
         <!-- Modal -->
         <div id="editModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
-
             <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
@@ -108,7 +105,6 @@
                 </div>
               </form>
             </div>
-
           </div>
         </div>
 

@@ -41,55 +41,54 @@
 	            	<div class="col-sm-4 pricing-1-box wow fadeInUp">
                 		<div class="pricing-1-box-inner">
 		                	<div class="pricing-1-box-price">
-		                		<strong>T1</strong><span> 30m²</span>
+							<strong>{{ $apparts[0]->name }}</strong>
 		                	</div>
 		                    <div class="pricing-1-box-features">
 		                    	<ul>
-		                    		<li>1000 lorem ipsum</li>
-		                    		<li>Normal speed</li>
-		                    		<li>500 dolor sit amet</li>
+									@foreach($apparts[0]->field as $field)
+		                    			<li>{{ $field->name }}</li>
+									@endforeach
 		                    	</ul>
 		                    </div>
 		                    <div class="pricing-1-box-sign-up">
-		                    	<a class="big-link-3" href="./contact.html">Contact us Now</a>
+		                    	<a class="big-link-3" href={{ route('contact') }}>Contact us Now</a>
 		                    </div>
 	                    </div>
                     </div>
                     <div class="col-sm-4 pricing-1-box pricing-1-box-best wow fadeInDown">
                 		<div class="pricing-1-box-inner">
 		                	<div class="pricing-1-box-price">
-		                		<strong>T3</strong><span> 80m²</span>
+		                		<strong>{{ $apparts[1]->name }}</strong>
 		                	</div>
 		                    <div class="pricing-1-box-features">
 		                    	<ul>
-		                    		<li>1000 lorem ipsum</li>
-		                    		<li>Normal speed</li>
-		                    		<li>500 dolor sit amet</li>
+		                    		@foreach($apparts[1]->field as $field)
+		                    			<li>{{ $field->name }}</li>
+									@endforeach
 		                    	</ul>
 		                    </div>
 		                    <div class="pricing-1-box-sign-up">
-		                    	<a class="big-link-3" href="./contact.html">Contact us Now</a>
+		                    	<a class="big-link-3" href={{ route('contact') }}>Contact us Now</a>
 		                    </div>
 	                    </div>
                     </div>
                     <div class="col-sm-4 pricing-1-box wow fadeInUp">
                 		<div class="pricing-1-box-inner">
 		                	<div class="pricing-1-box-price">
-		                		<strong>T1 bis</strong><span> 30m²</span>
+		                		<strong>{{ $apparts[2]->name }}</strong>
 		                	</div>
 		                    <div class="pricing-1-box-features">
 		                    	<ul>
-		                    		<li>1000 lorem ipsum</li>
-		                    		<li>Normal speed</li>
-		                    		<li>500 dolor sit amet</li>
+		                    		@foreach($apparts[2]->field as $field)
+		                    			<li>{{ $field->name }}</li>
+									@endforeach
 		                    	</ul>
 		                    </div>
 		                    <div class="pricing-1-box-sign-up">
-		                    	<a class="big-link-3" href="./contact.html">Contact us Now</a>
+		                    	<a class="big-link-3" href={{ route('contact') }}>Contact us Now</a>
 		                    </div>
 	                    </div>
                     </div>
-	            	
 	            </div>
 	        </div>
         </div>
