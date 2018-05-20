@@ -38,6 +38,11 @@ Route::post('/admin/tags', 'Admin\TagController@create');
 Route::get('/admin/tags/drop/{id}', 'Admin\TagController@delete')->name('dropTag');
 Route::post('/admin/tags/edit/{id}', 'Admin\TagController@edit')->name('editTag');
 
+Route::get('/admin/apparts', 'Admin\AppartController@index')->name('apparts');
+Route::post('/admin/apparts', 'Admin\AppartController@create');
+Route::get('/admin/apparts/drop/{id}', 'Admin\AppartController@delete')->name('appartsTag');
+Route::post('/admin/apparts/edit/{id}', 'Admin\AppartController@edit')->name('appartsTag');
+
 
 Route::get('/admin/gallery', 'Admin\GalleryController@index')->name('gallery');
 Route::get('/admin/gallery/drop/{id}', 'Admin\GalleryController@delete')->name('dropGallery');
