@@ -1,0 +1,32 @@
+td {
+    vertical-align: middle !important;
+}
+
+.mail_list_column {
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.sender-info {
+    margin-bottom: 20px;
+}
+
+.thumbnail .image {
+    height: 100%;
+}
+
+.tools-bottom {
+    margin-top: 38% !important;
+}
+
+a.cancel {
+    margin-left: 50px;
+}
+
+.form-title {
+    margin-left: 10px;
+}
+
+.modal-body {
+    height: 80px;
+}
