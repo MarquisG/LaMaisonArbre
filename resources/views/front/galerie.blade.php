@@ -12,7 +12,16 @@
                 <div class="row">
                     <div class="col-sm-12 wow fadeIn">
                         <i class="fa fa-camera"></i>
-                        <h1>Galerie</h1>
+                        @if(Auth::check())
+                            <h1 data-text='14' contentEditable="true" class="text-edit">
+                                {{ $texts[13]->content }}
+                            </h1>
+                            <button data-text='14' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <h1>{{ $texts[13]->content }}</h1>
+                        @endif
                     </div>
                 </div>
             </div>

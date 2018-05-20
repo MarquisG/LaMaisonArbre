@@ -14,14 +14,9 @@
 //Front Routes
 
 Route::get('/', 'Front\HomeController@index')->name('home');
-Route::get('/appartements', function () {
-    return view('front.appartements');
-})->name('appartements');
-Route::get('/contact', function () {
-    return view('front.contact');
-})->name('contact');
+Route::get('/appartements', 'Front\AppartementController@index')->name('appartements');
+Route::get('/contact', 'Front\ContactController@index')->name('contact');
 Route::get('/galerie', 'Front\GalerieController@index')->name('galerie');
-
 Route::post('/text/edit', 'Front\TextController@edit')->name('textEdit');
 
 
