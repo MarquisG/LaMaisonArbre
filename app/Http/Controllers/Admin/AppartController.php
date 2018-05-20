@@ -33,11 +33,12 @@ class AppartController extends Controller
 	
 	protected function create(Request $request)
 	{        
-        $tag = new Tag;
-        $tag->name = $request->name;
-        $tag->save();
+        $field = new Field;
+        $field->name = $request->name;
+        $field->appart_id = $request->appart;
+        $field->save();
 
-		return redirect('admin/apparts')->with('success', 'Tag Created');
+		return redirect('admin/apparts')->with('success', 'Field Created');
     }
     
     protected function delete(Request $request)

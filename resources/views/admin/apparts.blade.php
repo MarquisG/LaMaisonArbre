@@ -50,10 +50,27 @@
                               <td>{{ $field->name }}</td>
                               <td>
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editModal" onclick='action({{ $field->id }}, "{{ $field->name }}")'><small>Edit</small></button>
-                                <a href={{route('dropTag', $field->id)}} class="btn btn-danger"><small>Delete</small></a>
+                                <a href={{route('dropField', $field->id)}} class="btn btn-danger"><small>Delete</small></a>
                               </td>
                             </tr>
                           @endforeach
+                          <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="{{ route('apparts') }}" method="POST">
+                            <tr>
+                                <td>
+                                  
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="appart" value="{{ $appart->id }}">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                      <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                              
+                                </td>
+                                <td>
+                                  <button type="submit" class="btn btn-info"><small>Add</small></button>
+                                </td> 
+                              </tr>
+                            </form>
+
                         </tbody>
                       </table>
                     </div>
@@ -62,43 +79,6 @@
               </div>
             @endforeach
 
-
-
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Add a new appartement</h2>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                    <br />
-
-
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="{{ route('tags') }}" method="POST">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="name" name="name" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="reset">Reset</button>
-                          <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
         <!-- Modal -->
