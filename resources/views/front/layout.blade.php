@@ -133,9 +133,41 @@
                     <div class="col-sm-4 footer-box wow fadeInDown animated" style="visibility: visible;animation-name: fadeInDown;/* float:  right; *//* text-align:  right; */">
                         <h4>Contactez-nous</h4>
                         <div class="footer-box-text footer-box-text-contact">
-	                        <p><i class="fa fa-map-marker"></i> Addresse: 4 bis rue de la Mariette, 72100 LE MANS</p>
-	                        <p><i class="fa fa-phone"></i> Téléphone: 06 13 49 32 83</p>
-	                        <p><i class="fa fa-envelope"></i> Email: <a href="">contact@maisonarbre.com</a></p>
+
+                        
+                        @if(Auth::check())
+                            <i class="fa fa-map-marker"></i> Addresse:
+                            <p data-text='18' contentEditable="true" class="text-edit">
+                                {{ $texts[17]->content }}
+							</p>
+                            <button data-text='18' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p><i class="fa fa-map-marker"></i> Addresse: {{ $texts[17]->content }}</p>
+						@endif
+						
+                        @if(Auth::check())
+                            <p data-text='19' contentEditable="true" class="text-edit">
+                                {{ $texts[18]->content }}
+							</p>
+                            <button data-text='19' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p><i class="fa fa-phone"></i>{{ $texts[18]->content }}</p>
+						@endif
+						
+                        @if(Auth::check())
+                            <p data-text='20' contentEditable="true" class="text-edit">
+                                {{ $texts[19]->content }}
+							</p>
+                            <button data-text='20' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p><i class="fa fa-envelope"></i>{{ $texts[19]->content }}</p>
+                        @endif
                         </div>
                     </div>
                 </div>
