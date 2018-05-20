@@ -43,6 +43,12 @@
                             Users
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('apparts') }}">
+                            <i class="fa fa-building"></i>
+                            Appartements
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
