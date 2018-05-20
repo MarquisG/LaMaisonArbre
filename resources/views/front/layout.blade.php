@@ -48,11 +48,36 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</button>
-                    <a href="index.html">
-                        <h1>La Maison Arbre</h1>
-                        <p>Locations meublées au Mans</p>
-                    </a>
+                    </button>
+                    @if(!Auth::check())
+                        <a href={{ route('home') }}>
+                    @endif
+
+                    @if(Auth::check())
+                        <h1 data-text='12' contentEditable="true" class="text-edit">
+                            {{ $texts[11]->content }}
+                        </h1>
+                        <button data-text='12' class='btn btn-info' onclick='textValidate(this)'>
+                            <i class='fa fa-check'></i>
+                        </button>
+                    @else
+                        <h1>{{ $texts[11]->content }}</h1>
+                    @endif
+                    
+                    @if(Auth::check())
+                        <p data-text='13' contentEditable="true" class="text-edit">
+                            {{ $texts[12]->content }}
+                        </p>
+                        <button data-text='13' class='btn btn-info' onclick='textValidate(this)'>
+                            <i class='fa fa-check'></i>
+                        </button>
+                    @else
+                        <p>{{ $texts[12]->content }}</p>
+                    @endif
+                        
+                    @if(!Auth::check())
+                        </a>
+                    @endif
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -92,10 +117,16 @@
                     <div class="col-sm-4 footer-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
                         <h4>A propos</h4>
                         <div class="footer-box-text">
-	                        <p>
-	                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
-	                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
-	                        </p>
+	                        @if(Auth::check())
+								<p data-text='6' contentEditable="true" class="text-edit">
+									{{ $texts[5]->content }}
+                                </p>
+								<button data-text='6' class='btn btn-info' onclick='textValidate(this)'>
+									<i class='fa fa-check'></i>
+								</button>
+							@else
+								<p>{{ $texts[5]->content }}</p>
+							@endif
                         </div>
                     </div>
                     <div class="col-sm-1"></div>
@@ -140,7 +171,7 @@
         <script>
             function textValidate(e){
 
-                var content = document.querySelector('p[data-text="'+e.getAttribute('data-text')+'"]').innerHTML;
+                var content = document.querySelector('[data-text="'+e.getAttribute('data-text')+'"]').innerText;
 
                 $.ajax({
                     type: "POST",

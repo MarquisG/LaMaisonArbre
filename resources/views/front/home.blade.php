@@ -13,12 +13,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 slider-2-text wow fadeInUp">
-                        <h1>La Maison Arbre</h1>
+						
+						@if(Auth::check())
+							<h1 data-text='11' contentEditable="true" class="text-edit">
+								{{ $texts[10]->content }}
+							</h1>
+							<button data-text='11' class='btn btn-info' onclick='textValidate(this)'>
+								<i class='fa fa-check'></i>
+							</button>
+						@else
+							<h1>{{ $texts[10]->content }}</h1>
+						@endif
 					
 						@if(Auth::check())
-							<div contentEditable="true" class="text-edit">
-								<p data-text='1'>{{ $texts[0]->content }}</p>
-							</div>
+							<p data-text='1' contentEditable="true" class="text-edit">
+								{{ $texts[0]->content }}
+							</p>
 							<button data-text='1' class='btn btn-info' onclick='textValidate(this)'>
 								<i class='fa fa-check'></i>
 							</button>
@@ -36,12 +46,22 @@
         	<div class="container">
         		<div class="row">
 	        		<div class="col-sm-12 wow fadeInLeftBig">
-	            		<h1>La Maison Arbre - Location d'appartements meublés</h1>
+						
+						@if(Auth::check())
+							<h1 data-text='10' contentEditable="true" class="text-edit">
+								{{ $texts[9]->content }}
+							</h1>
+							<button data-text='10' class='btn btn-info' onclick='textValidate(this)'>
+								<i class='fa fa-check'></i>
+							</button>
+						@else
+							<h1>{{ $texts[9]->content }}</h1>
+						@endif
 
 						@if(Auth::check())
-							<div contentEditable="true" class="text-edit">
-								<p data-text='2'>{{ $texts[1]->content }}</p>
-							</div>
+							<p data-text='2' contentEditable="true" class="text-edit">
+								{{ $texts[1]->content }}
+							</p>
 							<button data-text='2' class='btn btn-info' onclick='textValidate(this)'>
 								<i class='fa fa-check'></i>
 							</button>
@@ -106,12 +126,22 @@
 	            	<div class="col-sm-4">
 		                <div class="work wow fadeInUp">
 		                    <img src="{{ asset('front/img/home/11.jpg') }}" alt="T1" data-at2x="{{ asset('front/img/home/11.jpg') }}">
-		                    <h3>Appartement T1 30m2</h3>
 
 							@if(Auth::check())
-								<div contentEditable="true" class="text-edit">
-									<p data-text='3'>{{ $texts[2]->content }}</p>
-								</div>
+								<h3 data-text='7' contentEditable="true" class="text-edit">
+									{{ $texts[6]->content }}
+								</h3>
+								<button data-text='7' class='btn btn-info' onclick='textValidate(this)'>
+									<i class='fa fa-check'></i>
+								</button>
+							@else
+								<h3>{{ $texts[6]->content }}</h3>
+							@endif
+
+							@if(Auth::check())
+								<p data-text='3' contentEditable="true" class="text-edit">
+									{{ $texts[2]->content }}
+								</p>
 								<button data-text='3' class='btn btn-info' onclick='textValidate(this)'>
 									<i class='fa fa-check'></i>
 								</button>
@@ -127,12 +157,22 @@
 	                <div class="col-sm-4">
 		                <div class="work wow fadeInDown">
 		                    <img src="{{ asset('front/img/home/17.jpg') }}" alt="T1b" data-at2x="{{ asset('front/img/home/17.jpg') }}">
-		                    <h3>Appartement traversant T1bis 30m2</h3>
+							
+							@if(Auth::check())
+								<h3 data-text='8' contentEditable="true" class="text-edit">
+									{{ $texts[7]->content }}
+								</h3>
+								<button data-text='8' class='btn btn-info' onclick='textValidate(this)'>
+									<i class='fa fa-check'></i>
+								</button>
+							@else
+								<h3>{{ $texts[7]->content }}</h3>
+							@endif
 
 							@if(Auth::check())
-								<div contentEditable="true" class="text-edit">
-									<p data-text='4'>{{ $texts[3]->content }}</p>
-								</div>
+								<p data-text='4' contentEditable="true" class="text-edit">
+									{{ $texts[3]->content }}
+								</p>
 								<button data-text='4' class='btn btn-info' onclick='textValidate(this)'>
 									<i class='fa fa-check'></i>
 								</button>
@@ -148,12 +188,23 @@
 		            <div class="col-sm-4">
 		                <div class="work wow fadeInUp">
 		                    <img src="{{ asset('front/img/home/1.jpg') }}" alt="T3" data-at2x="{{ asset('front/img/home/1.jpg') }}">
-		                    <h3>Appartement 80m2 T3</h3>
+							
+							@if(Auth::check())
+								<h3 data-text='9' contentEditable="true" class="text-edit">
+									{{ $texts[8]->content }}
+								</h3>
+								<button data-text='9' class='btn btn-info' onclick='textValidate(this)'>
+									<i class='fa fa-check'></i>
+								</button>
+							@else
+								<h3>{{ $texts[8]->content }}</h3>
+							@endif
+
 
 							@if(Auth::check())
-								<div contentEditable="true" class="text-edit">
-									<p data-text='5'>{{ $texts[4]->content }}</p>
-								</div>
+								<p data-text='5' contentEditable="true" class="text-edit">
+									{{ $texts[4]->content }}
+								</p>
 								<button data-text='5' class='btn btn-info' onclick='textValidate(this)'>
 									<i class='fa fa-check'></i>
 								</button>
