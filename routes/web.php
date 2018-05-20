@@ -41,7 +41,8 @@ Route::post('/admin/tags/edit/{id}', 'Admin\TagController@edit')->name('editTag'
 Route::get('/admin/apparts', 'Admin\AppartController@index')->name('apparts');
 Route::post('/admin/apparts', 'Admin\AppartController@create');
 Route::get('/admin/apparts/drop/{id}', 'Admin\AppartController@delete')->name('dropField');
-Route::post('/admin/apparts/edit/{id}', 'Admin\AppartController@edit')->name('editField');
+Route::post('/admin/field/edit/{id}', 'Admin\AppartController@edit')->name('editField');
+Route::post('/admin/apparts/edit/{id}', 'Admin\AppartController@editAppart')->name('editAppart');
 
 
 Route::get('/admin/gallery', 'Admin\GalleryController@index')->name('gallery');

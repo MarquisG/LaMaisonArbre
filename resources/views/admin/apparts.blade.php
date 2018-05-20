@@ -33,6 +33,7 @@
                   <div class="x_panel">
                     <div class="x_title">
                       <h2>{{ $appart->name }}</h2>
+                      <button type="button" class="btn btn-info edit-appart" data-toggle="modal" data-target="#editModal" onclick='action({{ $appart->id }}, "{{ $appart->name }}", "apparts")'><small>Edit</small></button>
                       <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -48,7 +49,7 @@
                             <tr>
                               <td>{{ $field->name }}</td>
                               <td>
-                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editModal" onclick='action({{ $field->id }}, "{{ $field->name }}")'><small>Edit</small></button>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editModal" onclick='action({{ $field->id }}, "{{ $field->name }}", "field")'><small>Edit</small></button>
                                 <a href={{route('dropField', $field->id)}} class="btn btn-danger"><small>Delete</small></a>
                               </td>
                             </tr>
@@ -114,8 +115,8 @@
 
 <script>
 
-function action(id, name){
-  document.getElementById('edit-form').action = './apparts/edit/'+id;
+function action(id, name, target){
+  document.getElementById('edit-form').action = './'+target+'/edit/'+id;
   document.getElementById('edit-name').value = name;
 }
 

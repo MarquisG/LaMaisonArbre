@@ -55,5 +55,14 @@ class AppartController extends Controller
         $field->save();
 
 		return redirect('admin/apparts')->with('success', 'Field Updated');
+    }
+    
+    protected function editAppart(Request $request)
+	{
+        $appart = Appart::find($request->id);  
+        $appart->name = $request->name;
+        $appart->save();
+
+		return redirect('admin/apparts')->with('success', 'Appartement name Updated');
 	}
 }
