@@ -12,7 +12,16 @@
                 <div class="row">
                     <div class="col-sm-12 wow fadeIn">
                         <i class="fa fa-envelope"></i>
-                        <h1>Nous Contacter</h1>
+                        @if(Auth::check())
+                            <h1 data-text='16' contentEditable="true" class="text-edit">
+                                {{ $texts[15]->content }}
+                            </h1>
+                            <button data-text='16' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <h1>{{ $texts[15]->content }}</h1>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -23,9 +32,16 @@
         	<div class="container">
 	            <div class="row">
 	                <div class="col-sm-7 contact-form wow fadeInLeft">
-	                    <p>
-	                    	Si vous avez des questions, n'hésitez pas à nous contacter par email ou par téléphone, nous vous répondrons dès que possible.
-	                    </p>
+	                    @if(Auth::check())
+                            <p data-text='17' contentEditable="true" class="text-edit">
+                                {{ $texts[16]->content }}
+							</p>
+                            <button data-text='17' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p>{{ $texts[16]->content }}</p>
+                        @endif
 	                    <form role="form" action="assets/sendmail.php" method="post">
 	                    	<div class="form-group">
 	                    		<label for="contact-name">Nom Prénom</label>
@@ -49,9 +65,39 @@
 	                <div class="col-sm-5 contact-address wow fadeInUp">
 	                    <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2669.6922790881986!2d0.20201061604122558!3d48.0003337792127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e28f2b385d0775%3A0x43c18a8ee4cb81c3!2s4+Bis+Rue+de+la+Mariette%2C+72100+Le+Mans!5e0!3m2!1sfr!2sfr!4v1518905877422" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
 	                    <h3>Addresse</h3>
-	                    <p>4 bis rue de la Mariette, <br> 72100 LE MANS</p>
-	                    <p>Téléphone: 06 13 49 32 83</p>
-                        <p>Email: contact@maisonarbre.com</p>
+	                    @if(Auth::check())
+                            <p data-text='18' contentEditable="true" class="text-edit">
+                                {{ $texts[17]->content }}
+							</p>
+                            <button data-text='18' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p>{{ $texts[17]->content }}</p>
+						@endif
+						
+						@if(Auth::check())
+                            <p data-text='19' contentEditable="true" class="text-edit">
+                                {{ $texts[18]->content }}
+							</p>
+                            <button data-text='19' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p>{{ $texts[18]->content }}</p>
+						@endif
+						
+						@if(Auth::check())
+                            <p data-text='20' contentEditable="true" class="text-edit">
+                                {{ $texts[19]->content }}
+							</p>
+                            <button data-text='20' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <p>{{ $texts[19]->content }}</p>
+                        @endif
+
 	                </div>
 	            </div>
 	        </div>

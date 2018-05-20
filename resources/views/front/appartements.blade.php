@@ -10,9 +10,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 wow fadeIn">
-                        <i class="fa fa-building"></i>
-                        <h1>Appartements /</h1>
-                        <p>Tous nos appartements avec les options</p>
+						<i class="fa fa-building"></i>
+						
+						@if(Auth::check())
+                            <h1 data-text='15' contentEditable="true" class="text-edit">
+                                {{ $texts[14]->content }}
+                            </h1>
+                            <button data-text='15' class='btn btn-info' onclick='textValidate(this)'>
+                                <span class='fa fa-check'></span>
+                            </button>
+                        @else
+                            <h1>{{ $texts[14]->content }}</h1>
+                        @endif
+
                     </div>
                 </div>
             </div>
